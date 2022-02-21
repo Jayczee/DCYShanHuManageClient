@@ -15,5 +15,10 @@ namespace BLL
         {
             return sdal.GetAllStudent();
         }
+
+        public DataTable SearchStu(string key, string value)
+        {
+            return sdal.SearchStu(key, value);
+        }
     }
 }

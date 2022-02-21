@@ -13,6 +13,7 @@ namespace 珊瑚幼儿园服务端
 {
     public partial class MainForm : Form
     {
+
         UserBll ubll=new();
         StudentBll sbll = new();
         public MainForm()
@@ -38,6 +39,25 @@ namespace 珊瑚幼儿园服务端
         {
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;//行高自动调整
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;//列宽自动调整
+        }
+
+        private void btnSearchStu_Click(object sender, EventArgs e)
+        {
+            StuSearchForm ssf = new(this);
+            ssf.StartPosition = FormStartPosition.CenterScreen;
+            ssf.Show();
+        }
+
+        public void SearchStu(string key,string value)
+        {
+            DataTable dt = sbll.SearchStu(key, value);
+            if (dt == null || dt.Rows.Count == 0)
+            {
+                MessageBox.Show("未查询到信息！");
+                return;
+            }
+            dataGridView1.DataSource=dt;
+            dataGridView1.Columns.RemoveAt(0);
         }
     }
 }

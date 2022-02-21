@@ -80,6 +80,7 @@
             this.btnSearchStu.TabIndex = 2;
             this.btnSearchStu.Text = "条件检索学生";
             this.btnSearchStu.UseVisualStyleBackColor = true;
+            this.btnSearchStu.Click += new System.EventHandler(this.btnSearchStu_Click);
             // 
             // btnAllStu
             // 
