@@ -84,5 +84,11 @@ namespace 珊瑚幼儿园服务端
                 edf.Show();
             }
         }
+
+        private void btnAllStus_Click(object sender, EventArgs e)
+        {
+            ExcelAddStuForm easf = new();
+            easf.Show();
+        }
     }
 }

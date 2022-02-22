@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using DAL;
 using System.Data;
 using Model;
+using System.Data.OleDb;
+
 
 namespace BLL
 {
@@ -48,12 +50,50 @@ namespace BLL
             return false;
         }
 
+        public int AddStudent(Student s,bool check)
+        {
+            if (ExistStuByCardNum(s.SCardNum))
+                return -1;
+            int res = sdal.AddStudent(s);
+            if (res >= 1)
+                return 1;
+            return 0;
+        }
+
         public bool EditStudent(Student s)
         {
             int res = sdal.EditStudent(s);
             if(res>=1)
                 return true;
             return false;
+        }
+
+        public bool ExistStuByCardNum(string cardnum)
+        {
+            DataTable dt = sdal.ExistStuByCardNum(cardnum);
+            if (dt.Rows.Count >= 1)
+                return true;
+            return false;
+        }
+
+        public DataTable GetStuInfFromExcel(string path)
+        {
+            string conStr = string.Format("Provider=Microsoft.ACE.OLEDB.12.0; Data source={0}; Extended Properties=Excel 12.0;", path);
+            using (OleDbConnection conn = new OleDbConnection(conStr))
+            {
+                conn.Open();
+                //获取所有Sheet的相关信息
+                DataTable dtSheet = conn.GetOleDbSchemaTable(System.Data.OleDb.OleDbSchemaGuid.Tables, null);
+                //获取第一个 Sheet的名称
+                string sheetName = dtSheet.Rows[0]["Table_Name"].ToString();
+                string sql = string.Format("select * from [{0}]", sheetName);
+                using (OleDbDataAdapter oda = new OleDbDataAdapter(sql, conn))
+                {
+                    DataTable dt = new DataTable();
+                    oda.Fill(dt);
+                    return dt;
+                }
+            }
         }
     }
 }

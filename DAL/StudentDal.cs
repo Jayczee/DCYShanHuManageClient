@@ -62,6 +62,12 @@ namespace DAL
                new SqlParameter("@para8", s.SCardNum));
         }
 
+        public DataTable ExistStuByCardNum(string cardnum)
+        {
+            return SqlHelper.ExecuteTable("select * from student where SCardNum=@para1",
+                new SqlParameter("@para1",cardnum));
+        }
+
         public int AddStudent(Student s)
         {
             return SqlHelper.ExecuteNonQuery("insert into student(SName,SClassNo,SYear,SPhone,SCardNum,SSex)values(@para1,@para2,@para3,@para4,@para5,@para6)",

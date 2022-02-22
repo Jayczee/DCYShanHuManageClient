@@ -138,6 +138,7 @@
             this.btnAllStus.TabIndex = 6;
             this.btnAllStus.Text = "EXCEL批量导入";
             this.btnAllStus.UseVisualStyleBackColor = true;
+            this.btnAllStus.Click += new System.EventHandler(this.btnAllStus_Click);
             // 
             // MainForm
             // 
