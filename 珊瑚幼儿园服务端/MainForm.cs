@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using Model;
 
 namespace 珊瑚幼儿园服务端
 {
@@ -58,6 +59,30 @@ namespace 珊瑚幼儿园服务端
             }
             dataGridView1.DataSource=dt;
             dataGridView1.Columns.RemoveAt(0);
+        }
+
+        private void btnUpStu_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("请选中要编辑的学生信息");
+                return;
+            }
+            else
+            {
+                int index = this.dataGridView1.CurrentRow.Index;
+                Student s = new();
+                s.SName = dataGridView1.Rows[index].Cells["SName"].Value.ToString();
+                s.SClassNo= dataGridView1.Rows[index].Cells["SClassNo"].Value.ToString();
+                s.SYear= dataGridView1.Rows[index].Cells["SYear"].Value.ToString();
+                s.SSex= dataGridView1.Rows[index].Cells["SSex"].Value.ToString();
+                s.STotalPoints= dataGridView1.Rows[index].Cells["STotalPoints"].Value.ToString();
+                s.SPoints=dataGridView1.Rows[index].Cells["SPoints"].Value.ToString();
+                s.SPhone= dataGridView1.Rows[index].Cells["SPhone"].Value.ToString();
+                s.SCardNum= dataGridView1.Rows[index].Cells["SCardNum"].Value.ToString();
+                EditStuForm edf=new EditStuForm(s);
+                edf.Show();
+            }
         }
     }
 }

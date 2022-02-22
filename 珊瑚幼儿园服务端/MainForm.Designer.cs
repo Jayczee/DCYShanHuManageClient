@@ -34,6 +34,9 @@
             this.btnSearchStu = new System.Windows.Forms.Button();
             this.btnAllStu = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnAddStu = new System.Windows.Forms.Button();
+            this.btnUpStu = new System.Windows.Forms.Button();
+            this.btnAllStus = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -50,6 +53,9 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnAllStus);
+            this.tabPage1.Controls.Add(this.btnUpStu);
+            this.tabPage1.Controls.Add(this.btnAddStu);
             this.tabPage1.Controls.Add(this.btnAllUser);
             this.tabPage1.Controls.Add(this.btnSearchStu);
             this.tabPage1.Controls.Add(this.btnAllStu);
@@ -101,8 +107,37 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(809, 454);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // btnAddStu
+            // 
+            this.btnAddStu.Location = new System.Drawing.Point(369, 20);
+            this.btnAddStu.Name = "btnAddStu";
+            this.btnAddStu.Size = new System.Drawing.Size(115, 35);
+            this.btnAddStu.TabIndex = 4;
+            this.btnAddStu.Text = "添加学生信息";
+            this.btnAddStu.UseVisualStyleBackColor = true;
+            // 
+            // btnUpStu
+            // 
+            this.btnUpStu.Location = new System.Drawing.Point(490, 20);
+            this.btnUpStu.Name = "btnUpStu";
+            this.btnUpStu.Size = new System.Drawing.Size(115, 35);
+            this.btnUpStu.TabIndex = 5;
+            this.btnUpStu.Text = "编辑学生信息";
+            this.btnUpStu.UseVisualStyleBackColor = true;
+            this.btnUpStu.Click += new System.EventHandler(this.btnUpStu_Click);
+            // 
+            // btnAllStus
+            // 
+            this.btnAllStus.Location = new System.Drawing.Point(611, 20);
+            this.btnAllStus.Name = "btnAllStus";
+            this.btnAllStus.Size = new System.Drawing.Size(115, 35);
+            this.btnAllStus.TabIndex = 6;
+            this.btnAllStus.Text = "EXCEL批量导入";
+            this.btnAllStus.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -131,5 +166,8 @@
         private Button btnAllStu;
         private Button btnSearchStu;
         private Button btnAllUser;
+        private Button btnAllStus;
+        private Button btnUpStu;
+        private Button btnAddStu;
     }
 }
