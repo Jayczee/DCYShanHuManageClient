@@ -63,6 +63,11 @@ namespace 珊瑚幼儿园服务端
 
         private void btnUpStu_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.Columns.Count>=5 && dataGridView1.Columns.Count <= 10)
+            {
+                MessageBox.Show("请选中要编辑的学生信息");
+                return;
+            }
             if (dataGridView1.SelectedRows.Count == 0)
             {
                 MessageBox.Show("请选中要编辑的学生信息");
