@@ -35,7 +35,7 @@ namespace BLL
                 ClassInf ci = new();
                 ci.CNo = dt.Rows[i]["CNo"].ToString();
                 ci.CName= dt.Rows[i]["CName"].ToString();
-                ci.CTUid= dt.Rows[i]["CTUid"].ToString();
+                ci.CTUid= dt.Rows[i]["CTUid1"].ToString();
                 ci.CTUid2 = dt.Rows[i]["CTUid2"].ToString();
                 list.Add(ci);
             }

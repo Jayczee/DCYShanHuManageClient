@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DAL;
+using Model;
 
 namespace BLL
 {
@@ -18,7 +19,13 @@ namespace BLL
                 return true;
             return false;
         }
-
+        public bool AddUser(User user)
+        {
+            int res = udal.AddUser(user);
+            if (res >= 1)
+                return true;
+            return false;
+        }
         public DataTable GetAllUser()
         {
             return udal.GetAllUser();

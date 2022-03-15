@@ -63,7 +63,7 @@ namespace 珊瑚幼儿园服务端
 
         private void btnUpStu_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.Columns.Count>=5 && dataGridView1.Columns.Count <= 10)
+            if (dataGridView1.Columns.Count>=5 && dataGridView1.Columns.Count <10)
             {
                 MessageBox.Show("请选中要编辑的学生信息");
                 return;
@@ -94,6 +94,42 @@ namespace 珊瑚幼儿园服务端
         {
             ExcelAddStuForm easf = new();
             easf.Show();
+        }
+
+        private void btnAddUser_Click(object sender, EventArgs e)
+        {
+            AddUserForm addUserForm = new(this);
+            addUserForm.StartPosition = FormStartPosition.CenterScreen;
+            addUserForm.Show();
+        }
+
+        private void btnUpUser_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.Columns.Count >= 5 && dataGridView1.Columns.Count < 10)
+            {
+                int index= this.dataGridView1.CurrentRow.Index;
+                User user=new User();
+                user.Uid=dataGridView1.Rows[index].Cells["Uid"].Value.ToString();
+                user.Upwd= dataGridView1.Rows[index].Cells["Pwd"].Value.ToString();
+                user.UserKind = dataGridView1.Rows[index].Cells["UserKind"].Value.ToString();
+                user.LastLoginTime = dataGridView1.Rows[index].Cells["LastLoginTime"].Value.ToString();
+                user.LastLoginIP= dataGridView1.Rows[index].Cells["LastLoginIP"].Value.ToString();
+                EditUserForm editUserForm = new EditUserForm(user);
+                editUserForm.StartPosition=FormStartPosition.CenterScreen;
+            }
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("请选中要编辑的用户信息");
+                return;
+            }
+        }
+
+        private void btnAddStu_Click(object sender, EventArgs e)
+        {
+            AddStuForm addStuForm = new AddStuForm();
+            addStuForm.StartPosition = FormStartPosition.CenterScreen;
+            addStuForm.Show();
+
         }
     }
 }

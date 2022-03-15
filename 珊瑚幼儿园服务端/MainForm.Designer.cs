@@ -30,6 +30,8 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnUpUser = new System.Windows.Forms.Button();
+            this.btnAddUser = new System.Windows.Forms.Button();
             this.btnAllStus = new System.Windows.Forms.Button();
             this.btnUpStu = new System.Windows.Forms.Button();
             this.btnAddStu = new System.Windows.Forms.Button();
@@ -37,8 +39,6 @@
             this.btnSearchStu = new System.Windows.Forms.Button();
             this.btnAllStu = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnAddUser = new System.Windows.Forms.Button();
-            this.btnUpUser = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -74,6 +74,28 @@
             this.tabPage1.Text = "人员信息管理";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // btnUpUser
+            // 
+            this.btnUpUser.Location = new System.Drawing.Point(1706, 36);
+            this.btnUpUser.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.btnUpUser.Name = "btnUpUser";
+            this.btnUpUser.Size = new System.Drawing.Size(230, 64);
+            this.btnUpUser.TabIndex = 8;
+            this.btnUpUser.Text = "编辑用户信息";
+            this.btnUpUser.UseVisualStyleBackColor = true;
+            this.btnUpUser.Click += new System.EventHandler(this.btnUpUser_Click);
+            // 
+            // btnAddUser
+            // 
+            this.btnAddUser.Location = new System.Drawing.Point(1464, 36);
+            this.btnAddUser.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.btnAddUser.Name = "btnAddUser";
+            this.btnAddUser.Size = new System.Drawing.Size(230, 64);
+            this.btnAddUser.TabIndex = 7;
+            this.btnAddUser.Text = "添加用户信息";
+            this.btnAddUser.UseVisualStyleBackColor = true;
+            this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
+            // 
             // btnAllStus
             // 
             this.btnAllStus.Location = new System.Drawing.Point(1222, 36);
@@ -105,6 +127,7 @@
             this.btnAddStu.TabIndex = 4;
             this.btnAddStu.Text = "添加学生信息";
             this.btnAddStu.UseVisualStyleBackColor = true;
+            this.btnAddStu.Click += new System.EventHandler(this.btnAddStu_Click);
             // 
             // btnAllUser
             // 
@@ -153,26 +176,6 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1618, 828);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // btnAddUser
-            // 
-            this.btnAddUser.Location = new System.Drawing.Point(1464, 36);
-            this.btnAddUser.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.btnAddUser.Name = "btnAddUser";
-            this.btnAddUser.Size = new System.Drawing.Size(230, 64);
-            this.btnAddUser.TabIndex = 7;
-            this.btnAddUser.Text = "添加用户信息";
-            this.btnAddUser.UseVisualStyleBackColor = true;
-            // 
-            // btnUpUser
-            // 
-            this.btnUpUser.Location = new System.Drawing.Point(1706, 36);
-            this.btnUpUser.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.btnUpUser.Name = "btnUpUser";
-            this.btnUpUser.Size = new System.Drawing.Size(230, 64);
-            this.btnUpUser.TabIndex = 8;
-            this.btnUpUser.Text = "编辑用户信息";
-            this.btnUpUser.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
