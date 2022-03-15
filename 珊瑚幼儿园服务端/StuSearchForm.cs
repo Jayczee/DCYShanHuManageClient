@@ -23,7 +23,11 @@ namespace 珊瑚幼儿园服务端
             InitializeComponent();
             this.mf=mf;
         }
-
+        /// <summary>
+        /// tttt
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSearch_Click(object sender, EventArgs e)
         {
             if(comboBox1.Text==null || comboBox1.Text == "")
