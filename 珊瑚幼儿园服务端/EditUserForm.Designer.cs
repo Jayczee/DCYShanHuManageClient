@@ -112,6 +112,7 @@
             // 
             // UserLastTime
             // 
+            this.UserLastTime.Enabled = false;
             this.UserLastTime.Location = new System.Drawing.Point(570, 53);
             this.UserLastTime.Name = "UserLastTime";
             this.UserLastTime.Size = new System.Drawing.Size(200, 38);
@@ -119,6 +120,7 @@
             // 
             // UserLastIP
             // 
+            this.UserLastIP.Enabled = false;
             this.UserLastIP.Location = new System.Drawing.Point(570, 180);
             this.UserLastIP.Name = "UserLastIP";
             this.UserLastIP.Size = new System.Drawing.Size(200, 38);

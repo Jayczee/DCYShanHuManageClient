@@ -20,12 +20,11 @@ namespace DAL
         }
         public int EditUser(User user)
         {
-            return SqlHelper.ExecuteNonQuery("update userinf set Uid=@uid,Pwd=@pwd,UserKind=@kind,LastLoginTime=@time,LastLoginIP=@ip where Uid=@olduid and Pwd=@oldpwd ",new SqlParameter("@uid",user.Uid.Trim()),
+            return SqlHelper.ExecuteNonQuery("UPDATE userinf set uid=@name, pwd=@pwd,userkind=@k WHERE ID=@id",
+                new SqlParameter("@name",user.Uid.Trim()),
                 new SqlParameter("@pwd",user.Upwd.Trim()),
-                new SqlParameter("@kind", user.UserKind.Trim()),
-                new SqlParameter("@time", user.LastLoginTime.Trim()),
-                new SqlParameter("@ip", user.LastLoginIP.Trim()),
-                new SqlParameter("@id", user.Upwd.Trim())
+                new SqlParameter ("@k",user.UserKind.Trim()),
+                new SqlParameter("@id",user.Id)
                 );
         }
         public int AddUser(User user)

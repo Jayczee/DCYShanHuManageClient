@@ -12,10 +12,10 @@ namespace BLL
     public class UserBll
     {
         UserDal udal = new();
-        public bool UserLogin(string uid, string pwd,int userkind)
+        public bool UserLogin(string uid, string pwd, int userkind)
         {
-            int res = udal.UserLogin(uid,pwd,userkind).Rows.Count;
-            if(res>=1)
+            int res = udal.UserLogin(uid, pwd, userkind).Rows.Count;
+            if (res >= 1)
                 return true;
             return false;
         }
@@ -25,6 +25,14 @@ namespace BLL
             if (res >= 1)
                 return true;
             return false;
+        }
+        public bool EditUser(User user)
+        {
+            int res = udal.EditUser(user);
+            if (res >= 1)
+                return true;
+            return false;
+
         }
         public DataTable GetAllUser()
         {
